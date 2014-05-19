@@ -19,7 +19,7 @@ def week4():
     from cryptography1.week4 import decrypt
     decrypt.main()
 
-def week5(version):
+def week5(version = 'gmpy2'):
     if version == 'gmpy2':
         from cryptography1.week5 import discrete_log_gmpy2
         discrete_log_gmpy2.main()
