@@ -1,0 +1,2 @@
+FILE_1 = https://class.coursera.org/crypto-010/lecture/download.mp4?lecture_id=28
+FILE_2 = https://class.coursera.org/crypto-010/lecture/download.mp4?lecture_id=27
