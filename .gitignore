@@ -1,3 +1,10 @@
 **/.DS_STORE
 **/*.mp4
 **/*.pyc
+**/*.py[cod]
+
+
+*.egg
+*.egg-info
+eggs
+develop-eggs

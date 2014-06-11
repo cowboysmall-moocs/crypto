@@ -1,4 +1,4 @@
-from numbthy import powmod, invmod
+from gmpy2 import powmod, t_mod, invert
 
 import sys
 import time
@@ -14,17 +14,14 @@ x should be equal to 375374217830
 '''
 def main():
     g_to_b   = powmod(G, 1048576, P)
-    g_invert = invmod(G, P)
+    g_invert = invert(G, P)
     map      = {}
 
     time_start = time.time()
-    calc_1 = powmod(H * G, 1, P)
+    calc_1 = t_mod(H * G, P)
     for i in range(1048576 + 1):
-        calc_1 = powmod(calc_1 * g_invert, 1, P)
+        calc_1 = t_mod(calc_1 * g_invert, P)
         map[calc_1] = i
-
-        # sys.stdout.write('%7d with value %s\r' % (i, calc_1))
-        # sys.stdout.flush()
 
     time_end = time.time()
     sys.stdout.write('\n\n')
@@ -33,12 +30,9 @@ def main():
     sys.stdout.flush()
 
     time_start = time.time()
-    calc_0 = invmod(g_to_b, P)
+    calc_0 = invert(g_to_b, P)
     for j in range(1048576 + 1):
-        calc_0 = powmod(calc_0 * g_to_b, 1, P)
-
-        # sys.stdout.write('%7d with value %s\r' % (j, calc_0))
-        # sys.stdout.flush()
+        calc_0 = t_mod(calc_0 * g_to_b, P)
 
         if calc_0 in map:
             calc = (j * 1048576) + map[calc_0]
@@ -51,6 +45,7 @@ def main():
 
     time_end = time.time()
     sys.stdout.write('Time: %0.3f ms\n' % ((time_end - time_start) * 1000.0))
+    sys.stdout.flush()
 
 
 if __name__ == "__main__":

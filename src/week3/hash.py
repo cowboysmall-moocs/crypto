@@ -3,11 +3,11 @@ import os.path
 from Crypto.Hash import SHA256
 
 
-FILE_1      = os.path.join(os.path.dirname(__file__), '../../data/6 - 2 - Generic birthday attack (16 min).mp4')
+FILE_1      = os.path.join(os.path.dirname(__file__), '../../tests/data/6 - 2 - Generic birthday attack (16 min).mp4')
 FILE_1_URL  = "https://class.coursera.org/crypto-010/lecture/download.mp4?lecture_id=28"
 FILE_1_HASH = "03c08f4ee0b576fe319338139c045c89c3e8e9409633bea29442e21425006ea8"
 
-FILE_2      = os.path.join(os.path.dirname(__file__), '../../data/6 - 1 - Introduction (11 min).mp4')
+FILE_2      = os.path.join(os.path.dirname(__file__), '../../tests/data/6 - 1 - Introduction (11 min).mp4')
 FILE_2_URL  = "https://class.coursera.org/crypto-010/lecture/download.mp4?lecture_id=27"
 FILE_2_HASH = "5b96aece304a1422224f9a41b228416028f9ba26b0d1058f400200f06a589949"
 
