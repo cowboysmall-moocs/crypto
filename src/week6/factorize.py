@@ -48,28 +48,25 @@ def rsa_decrypt(number, exponent, p, q, N):
 def main():
     print '\nFactorization Exercise.\n\n'
     p, q, i = factorize(N_1, 1)
-    print '1st:'
-    print '                  p = ', p
-    print '                  q = ', q
-    print '         iterations = ', i
-    print '\n\n'
-
-
-    print 'decrypted plaintext = ', rsa_decrypt(C, E, p, q, N_1)
+    print '       1st:'
+    print 'Iterations: ', i
+    print '         p: ', p
+    print '         q: ', q
+    print ' Plaintext: ', rsa_decrypt(C, E, p, q, N_1)
     print '\n\n'
 
     p, q, i = factorize(N_2, 1048576)
-    print '2nd:'
-    print '                  p = ', p
-    print '                  q = ', q
-    print '         iterations = ', i
+    print '       2nd:'
+    print 'Iterations: ', i
+    print '         p: ', p
+    print '         q: ', q
     print '\n\n'
 
     p, q, i = factorize(mul(N_3, 24), 1)
-    print '3rd:'
-    print '                  p = ', div(p, 6)
-    print '                  q = ', div(q, 4)
-    print '         iterations = ', i
+    print '       3rd:'
+    print 'Iterations: ', i
+    print '         p: ', div(p, 6)
+    print '         q: ', div(q, 4)
     print '\n\n'
     
 
