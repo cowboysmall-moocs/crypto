@@ -1,6 +1,6 @@
 cryptography1
 =============
 
-Cryptography 1 contains all programming exercises for the Coursera course
+cryptography1 contains all programming exercises for the Coursera course (Cryptography 1)
 
 
