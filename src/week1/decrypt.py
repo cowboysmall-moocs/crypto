@@ -19,8 +19,12 @@ LOWERCASE_RANGE = range(97, 123)
 CHARACTER_RANGE = range(32, 127)
 
 
+
+
 def unencode_to_array(s):
     return [ord(c) for c in s.decode('hex')]
+
+
 
 def xor(a, b):
     if len(a) > len(b):
@@ -28,9 +32,14 @@ def xor(a, b):
     else:
         return [x ^ y for (x, y) in zip(a, b[:len(a)])]
 
+
+
 def print_unencoded(cypher_texts, key):
     for i in range(len(cypher_texts)):
         print "Message %2d = %s" % ((i + 1), "".join([chr(c) for c in xor(cypher_texts[i], key)]))
+    print
+
+
 
 def key_from_spaces(cypher_texts, key_length):
     key  = [0] * key_length
@@ -38,44 +47,59 @@ def key_from_spaces(cypher_texts, key_length):
 
     for i in range(len(cypher_texts)):
         for j in range(i + 1, len(cypher_texts)):
+
             count = 0
             for (x, y) in zip(cypher_texts[i][:key_length], cypher_texts[j][:key_length]):
+
                 result = x ^ y
                 if result in UPPERCASE_RANGE + LOWERCASE_RANGE:
+
                     if x ^ (result + 32) == y ^ 32 or x ^ (result - 32) == y ^ 32:
                         temp_key = y ^ 32
                         if temp_key in hits[count]:
                             hits[count][temp_key] += 1
                         else:
-                            hits[count][temp_key] = 1
+                            hits[count][temp_key]  = 1
+
                         if key[count] not in hits[count] or hits[count][key[count]] < hits[count][temp_key]:
                             key[count] = temp_key
+
                     if y ^ (result + 32) == x ^ 32 or y ^ (result - 32) == x ^ 32:
                         temp_key = x ^ 32
                         if temp_key in hits[count]:
                             hits[count][temp_key] += 1
                         else:
-                            hits[count][temp_key] = 1
+                            hits[count][temp_key]  = 1
+
                         if key[count] not in hits[count] or hits[count][key[count]] < hits[count][temp_key]:
                             key[count] = temp_key
+
                 count += 1
+
     return key
 
+
+
 def main():
-    print "\nDecrypt Many-time Pad Demo\n"
+    print
+    print "Decrypt Many-time Pad Demo"
+    print
 
     unencoded_cypher_texts = [unencode_to_array(ct) for ct in CYPHER_TEXTS]
     unencoded_cypher_text  = unencode_to_array(CYPHER_TEXTS[10])
     key_length             = len(unencoded_cypher_text)
+    key                    = key_from_spaces(unencoded_cypher_texts, key_length)
 
-    key = key_from_spaces(unencoded_cypher_texts, key_length)
     print_unencoded(unencoded_cypher_texts, key)
 
-    print "\nmake best guess and use to derive key...\n"
+    print
+    print "Make best guess and use to derive key"
+    print
 
     plain_text             = "The secret message is: When using a stream cipher, never use the key more than once"
     plain_text_array       = [ord(c) for c in plain_text]
     new_key                = xor(plain_text_array, unencoded_cypher_text)
+
     print_unencoded(unencoded_cypher_texts, new_key)
 
 

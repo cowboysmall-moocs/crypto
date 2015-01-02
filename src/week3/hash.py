@@ -12,12 +12,14 @@ FILE_2_URL  = "https://class.coursera.org/crypto-010/lecture/download.mp4?lectur
 FILE_2_HASH = "5b96aece304a1422224f9a41b228416028f9ba26b0d1058f400200f06a589949"
 
 
+
 def read_blocks(file, block_size = 1024):
     while True:
         block = file.read(block_size)
         if not block:
             break
         yield block
+
 
 
 def calculate_hash(blocks):
@@ -32,7 +34,12 @@ def calculate_hash(blocks):
     return current.encode('hex')
 
 
+
 def main():
+    print
+    print "SHA256 Demo"
+    print
+
     file_1      = open(FILE_1, 'rb')
     file_1_hash = calculate_hash(reversed([block for block in read_blocks(file_1)]))
 
@@ -48,6 +55,7 @@ def main():
     print "Expected Hash: ", FILE_2_HASH
     print "  Actual Hash: ", file_2_hash
     print "   Successful: ", FILE_2_HASH == file_2_hash
+    print
 
 
 
