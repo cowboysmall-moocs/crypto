@@ -7,7 +7,6 @@ import encdec
 
 
 '''
-
     Decrypted Messages:
 
     1: Basic CBC mode encryption needs padding.\x08\x08\x08\x08\x08\x08\x08\x08
@@ -24,11 +23,11 @@ def main(argv):
     print
     print 'AES Demo'
     print
-    print encdec.aes_decrypt(lines[0], lines[1])
-    print encdec.aes_decrypt(lines[0], lines[2])
+    print encdec.aes_decrypt(lines[1], lines[0])
+    print encdec.aes_decrypt(lines[2], lines[0])
     print
-    print encdec.aes_decrypt(lines[3], lines[4], True)
-    print encdec.aes_decrypt(lines[3], lines[5], True)
+    print encdec.aes_decrypt(lines[4], lines[3], True)
+    print encdec.aes_decrypt(lines[5], lines[3], True)
     print
 
 

@@ -1,5 +1,10 @@
 
 
+def read_line(file_path):
+    with open(file_path) as file:
+        return file.readline().strip()
+
+
 def read_lines(file_path):
     lines = []
 
@@ -23,5 +28,4 @@ def read_blocks(file_path, block_size = 1024):
             blocks.append(block)
 
     return blocks
-
 

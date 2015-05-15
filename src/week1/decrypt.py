@@ -18,13 +18,12 @@ def main(argv):
     print
     print 'Decrypt Many-time Pad Demo'
     print
-    for i in range(len(cypher_texts)):
+    for i in xrange(len(cypher_texts)):
         print 'Message %2d = %s' % ((i + 1), ''.join([chr(c) for c in common.xor(cypher_texts[i], key)]))
-    print
     print
     print 'Make best guess and use to derive key'
     print
-    for i in range(len(cypher_texts)):
+    for i in xrange(len(cypher_texts)):
         print 'Message %2d = %s' % ((i + 1), ''.join([chr(c) for c in common.xor(cypher_texts[i], new_key)]))
     print
 
