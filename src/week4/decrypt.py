@@ -42,7 +42,7 @@ def clear_discovered(discovered, block, length):
 
 
 def convert_to_string(array):
-    return "".join([chr(c) for c in array])
+    return ''.join([chr(c) for c in array])
 
 
 
@@ -74,22 +74,18 @@ def decrypt_from_padding_oracle(cypher_text):
     return discovered
 
 
-
 def main():
-    print
-    print "Padding Oracle Demo"
-    print
-
     unencoded  = unencode_to_array(CYPHER_TEXT)
     discovered = decrypt_from_padding_oracle(unencoded)
 
+    print
+    print "Padding Oracle Demo"
     print
     print
     print "Found: ", convert_to_string(discovered)
     print
     print "  Hex: ", convert_to_string(discovered).encode('hex')
     print
-
 
 
 if __name__ == "__main__":
