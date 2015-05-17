@@ -14,6 +14,7 @@ import nt
 def main(argv):
     P, G, H    = [int(i) for i in files.read_lines(argv[0])]
 
+    # calculated = nt.discrete_log_numbthy(P, G, H)
     calculated = nt.discrete_log_gmpy2(P, G, H)
 
 
