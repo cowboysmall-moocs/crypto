@@ -15,11 +15,11 @@ def main(argv):
     P, G, H    = [int(i) for i in files.read_lines(argv[0])]
 
     # calculated = nt.discrete_log_numbthy(P, G, H)
-    calculated = nt.discrete_log_gmpy2(P, G, H)
+    calculated = nt.discrete_log(P, G, H)
 
 
     print
-    print "Discrete Log Demo (gmpy2)"
+    print "Discrete Log Demo"
     print 
     print 'Successfully found x with a value of %s' % calculated
     print

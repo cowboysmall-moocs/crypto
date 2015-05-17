@@ -18,7 +18,7 @@ def factorize(number, delta):
     return (0, 0, 0)
 
 
-def discrete_log_gmpy2(P, G, H):
+def discrete_log(P, G, H):
     lookup   = {}
 
     g_to_b   = powmod(G, 1048576, P)
