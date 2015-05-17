@@ -3,7 +3,7 @@ import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '../tools'))
 
 import files
-import nt
+import number
 
 
 '''
@@ -14,8 +14,8 @@ import nt
 def main(argv):
     P, G, H    = [int(i) for i in files.read_lines(argv[0])]
 
-    # calculated = nt.discrete_log_numbthy(P, G, H)
-    calculated = nt.discrete_log(P, G, H)
+    # calculated = number.discrete_log_numbthy(P, G, H)
+    calculated = number.discrete_log(P, G, H)
 
 
     print

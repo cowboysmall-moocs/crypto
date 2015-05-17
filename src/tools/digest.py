@@ -1,7 +1,7 @@
 from Crypto.Hash import SHA256
 
 
-def calculate(blocks):
+def sha256_calculate(blocks):
     current = 0
 
     for block in reversed(blocks):
