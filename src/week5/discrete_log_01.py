@@ -8,8 +8,7 @@ import nt
 
 '''
     x should be equal to 375374217830
-                         375374217830
-                         375374217830
+
 '''
 
 def main(argv):
