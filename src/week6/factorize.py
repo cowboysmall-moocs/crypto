@@ -4,7 +4,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '../tools'))
 
 import files
 import encdec
-import nt
+import number
 
 from gmpy2 import mpz, mul, div
 
@@ -35,9 +35,9 @@ def main(argv):
     C          = mpz(lines[3])
     E          = int(lines[4])
 
-    p1, q1, i1 = nt.factorize(N_1, 1)
-    p2, q2, i2 = nt.factorize(N_2, 1048576)
-    p3, q3, i3 = nt.factorize(mul(N_3, 24), 1)
+    p1, q1, i1 = number.factorize(N_1, 1)
+    p2, q2, i2 = number.factorize(N_2, 1048576)
+    p3, q3, i3 = number.factorize(mul(N_3, 24), 1)
 
     print
     print 'Factorization Demo'
