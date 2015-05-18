@@ -19,5 +19,3 @@ def xor(a, b):
 def three_xor(a, b, c):
     return xor(a, xor(b, c))
 
-
-
