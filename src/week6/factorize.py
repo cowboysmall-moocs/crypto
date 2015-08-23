@@ -2,15 +2,17 @@ import os
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '../tools'))
 
+from gmpy2 import mpz, mul, div
+
 import files
 import encdec
 import number
 
-from gmpy2 import mpz, mul, div
-
 
 '''
-    Decrypted Message: Factoring lets us break RSA.
+    Decrypted Message: 
+
+    Factoring lets us break RSA.
 
 '''
 
@@ -36,7 +38,6 @@ def main(argv):
     print 'Iterations: ', i1
     print '         p: ', p1
     print '         q: ', q1
-    print ' Plaintext: ', encdec.rsa_decrypt(C, E, p1, q1, N_1)
     print
     print '       2nd:'
     print 'Iterations: ', i2
@@ -47,6 +48,9 @@ def main(argv):
     print 'Iterations: ', i3
     print '         p: ', div(p3, 6)
     print '         q: ', div(q3, 4)
+    print
+    print
+    print ' Plaintext: ', encdec.rsa_decrypt(C, E, p1, q1, N_1)
     print
 
 

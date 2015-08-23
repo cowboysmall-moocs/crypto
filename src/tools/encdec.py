@@ -1,10 +1,10 @@
-import http
-import common
-
 from gmpy2         import mul, invert, powmod
 from Crypto.Cipher import AES
 from Crypto.Util   import Counter
 from collections   import defaultdict
+
+import http
+import common
 
 
 def many_time_pad_crack(cypher_texts, key_length):
